@@ -3,7 +3,7 @@
   --brand-color-text: #757575;
   --brand-color-focus: #2196f3;
   --brand-background-color: #2f303a;
-  --timing-function: 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
@@ -568,6 +568,8 @@ header {
   border-style: none;
   outline: none;
   border-radius: 3px;
+  transition: background-color var(--timing-function),
+    color var(--timing-function), box-shadow var(--timing-function);
 }
 
 .portfolio-buttons-button:hover,
@@ -592,6 +594,23 @@ header {
   flex-basis: calc(100% / 3 - 30px);
   margin-right: 30px;
   margin-bottom: 30px;
+  transition: box-shadow var(--timing-function);
+}
+
+.portfolio-gallery-item:hover,
+.portfolio-gallery-item:focus {
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-card {
+  width: 370px;
+  border: 1px solid #eeeeee;
+  border-top: none;
+  padding: 20px 0 20px 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio-gallery-main {
@@ -608,20 +627,4 @@ header {
   line-height: 1.87;
   letter-spacing: 0.03em;
   color: var(--brand-color-text);
-}
-
-.portfolio-card {
-  width: 370px;
-  border: 1px solid #eeeeee;
-  border-top: none;
-  padding: 20px 0 20px 24px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.portfolio-gallery-item:hover,
-.portfolio-gallery-item:focus {
-  cursor: pointer;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
